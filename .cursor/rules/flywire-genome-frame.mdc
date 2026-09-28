@@ -1,0 +1,49 @@
+---
+description: FlyWire product frame — bio-like NN constructor; fly CNS as specimen; honest CNS visuals
+alwaysApply: true
+---
+
+# FlyWire — mandatory product frame
+
+## Goal
+
+**Конструктор биологически подобной нейросети** — инструмент, в котором собирают, правят и проверяют нервные системы по био-подобным правилам, а не ещё один демо-симулятор мухи.
+
+## Method
+
+**ЦНС мухи (FlyWire / MaleCNS) — образец** для моделирования и reverse engineering: один удачный blueprint → извлечь редактируемый рецепт сборки («геном»), мутировать его, собирать другие рабочие системы.
+
+## Requirement
+
+**Точное визуальное отображение процессов в этой ЦНС.** UI не врёт: метры, оверлеи и Sample/3D показывают реальные scope / hop / activation / carve / devices. Типичные схемы обычных нейросетей (слои MLP, «твин мухи») — запрещены как главный визуальный язык.
+
+---
+
+## Research north-star (how we get there)
+
+Connectome = one successful **blueprint instance**, not the product. Prefer:
+
+1. **Genome compression** — short generative rules → mutate → new brains.
+2. **Learn stimulation, not weights** — freeze topology; learn what to touch.
+3. **Socket assembly** — typed I/O between modules.
+
+Use (2) for fast demos, (3) as bridge, (1) as long-term goal.
+
+## Forbidden (reject or reframe)
+
+- Shiu-style whole-brain LIF just to match feeding/grooming papers
+- Classic MB conditioning as the main demo
+- Vanilla GNN / Transformer / sparse MLP whose only novelty is FlyWire adjacency
+- "Digital twin of the fly" as the product story
+- Training all ~50M synapses end-to-end as the default plan
+- UI that shows a living tract / plasticity when meters are empty
+
+If a proposal can be summarized in one line from an existing paper — discard it.
+
+## Success test
+
+We succeed when: *from one connectome we got an editable constructor recipe; changing it yields a different still-working nervous system* — and the visuals honestly show what that CNS is doing — not when we re-simulate a known circuit.
+
+## Data role
+
+`data/raw/` (connectivity + E/I + NT + neuropil) is raw material for recipes and interfaces. Simulation is a **probe**, not the contribution.

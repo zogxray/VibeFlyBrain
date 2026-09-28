@@ -1,0 +1,148 @@
+# =============================================================================
+# Vibe Fly Brain — .gitignore
+# Code + thin scaffolding in git. Heavy data, secrets, local UI, and tooling
+# caches stay out (re-fetch via scripts/download_data.sh / build_malecns_clouds.py).
+# =============================================================================
+
+# ----- Python -----
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Virtualenvs (any common layout / location)
+.venv/
+venv/
+ENV/
+env/
+.env/
+
+# Test / type / lint caches
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.hypothesis/
+.coverage
+.coverage.*
+htmlcov/
+.tox/
+.nox/
+coverage.xml
+*.cover
+.cache/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# ----- Secrets & local env -----
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+credentials.json
+secrets.*
+*.secret
+
+# ----- Project data (large / regenerated / personal) -----
+# Keep directory stubs so a fresh clone has the layout.
+data/raw/**
+!data/raw/
+!data/raw/.gitkeep
+data/processed/**
+!data/processed/
+!data/processed/.gitkeep
+data/flies/**
+!data/flies/
+!data/flies/.gitkeep
+
+# Catch-alls if binaries land outside data/ (safety net)
+*.npz
+*.npz.*
+*.parquet
+*.feather
+*.arrow
+*.h5
+*.hdf5
+*.pkl
+*.pickle
+*.joblib
+*.pt
+*.pth
+*.onnx
+*.swc
+*.fly
+
+# Local shell UI / session (lives under data/processed when present)
+shell_ui.json
+
+# ----- Runtime / outputs -----
+results/
+logs/
+*.log
+*.tmp
+*.temp
+*.bak
+*.swp
+*~
+
+# Screenshots / captures dropped in-tree while debugging (not README gallery)
+/assets/
+/screenshots/
+/captures/
+*.mp4
+*.webm
+# README gallery — must be tracked
+!docs/screenshots/
+!docs/screenshots/**
+
+# ----- IDE / editor -----
+.idea/
+.vscode/
+*.code-workspace
+*.sublime-project
+*.sublime-workspace
+*.swp
+*.swo
+
+# Cursor: ignore local/cache; keep shared project rules & skills for collaborators
+.cursor/*
+!.cursor/rules/
+!.cursor/rules/**
+!.cursor/skills/
+!.cursor/skills/**
+
+# ----- OS junk -----
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+desktop.ini
+
+# ----- Optional GPU / native scratch -----
+*.prof
+*.lprof
+.moderngl_context_cache/

@@ -1,0 +1,6 @@
+# Runtime — Vibe Fly Brain (genome_shell)
+numpy>=1.24
+pandas>=2.0
+pyarrow>=14.0
+pygame>=2.5
+Pillow>=10.0
